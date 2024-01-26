@@ -31,12 +31,6 @@ Welcome to the Open Library Search Challenge! In this project, you will create a
 - **User Experience**: Is the application easy to use and visually appealing?
 - **Creativity**: Extra points for creativity and added features.
 
-## Getting Started
-1. Fork or clone this repository.
-2. Set up your Next.js environment.
-3. Plan your application structure and UI design.
-4. Start coding!
-
 ## Resources
 - Next.js Documentation: https://nextjs.org/docs
 - Open Library API: https://openlibrary.org/developers/api
