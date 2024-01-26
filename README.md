@@ -1,4 +1,6 @@
 # Vitruvius Design+Build next.js challenge
+![VitruviusMan](https://github.com/Vitruvius-Design/next-js-challenge/assets/47342870/cc490957-5692-482c-ad1e-88b91f35547b)
+
 
 ## Overview
 Welcome to the Open Library Search Challenge! In this project, you will create a Next.js application that leverages the Open Library API to provide a book search functionality. This application should allow users to search for books, display the results, and view detailed information about each book by using the unique key provided by the API. The project should focus on both functionality and user experience.
