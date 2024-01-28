@@ -1,6 +1,7 @@
 {
   "name": "vitruvius-cc",
   "version": "0.1.0",
+  "author": "Spencer Rafada",
   "private": true,
   "scripts": {
     "dev": "next dev",
