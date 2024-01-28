@@ -1,42 +1,36 @@
-# Vitruvius Design+Build next.js challenge
-![VitruviusMan](https://github.com/Vitruvius-Design/next-js-challenge/assets/47342870/cc490957-5692-482c-ad1e-88b91f35547b)
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Getting Started
 
-## Overview
-Welcome to the Open Library Search Challenge! In this project, you will create a Next.js application that leverages the Open Library API to provide a book search functionality. This application should allow users to search for books, display the results, and view detailed information about each book by using the unique key provided by the API. The project should focus on both functionality and user experience.
+First, run the development server:
 
-## Objectives
-- **Search Functionality**: Implement a search feature using the Open Library Search API (https://openlibrary.org/dev/docs/api/search).
-- **List Results**: Display search results with relevant information about the books.
-- **Detailed View**: Enable users to view detailed information about a book by selecting it from the search results.
-- **Pagination**: Implement pagination for the search results.
-- **User Experience**: Design the interface to be intuitive and user-friendly.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Requirements
-- **Framework**: Use Next.js for the project.
-- **API Integration**: Utilize the Open Library API for fetching book data.
-- **Responsiveness**: The application should be responsive and work well on both desktop and mobile devices.
-- **Documentation**: Include a README.md file with clear instructions on how to set up and run the project.
-- **Code Quality**: Write clean, readable, and well-structured code.
-- **Version Control**: Use Git for version control.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Submission
-- **Repository**: Push your code to a public GitHub repository.
-- **Email**: Once you have completed the challenge, email the link to your GitHub repository to izzy@vitruvius.design.
-- **Deadline**: The challenge must be submitted by Friday, Feb 2.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Evaluation Criteria
-- **Functionality**: How well does the application meet the objectives?
-- **Code Quality**: Is the code clean, well-organized, and documented?
-- **User Experience**: Is the application easy to use and visually appealing?
-- **Creativity**: Extra points for creativity and added features.
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Resources
-- Next.js Documentation: https://nextjs.org/docs
-- Open Library API: https://openlibrary.org/developers/api
-- Open Library Search API Documentation: https://openlibrary.org/dev/docs/api/search
+## Learn More
 
-## Questions
-If you have any questions or need clarification, feel free to reach out to izzy@vitruvius.design.
+To learn more about Next.js, take a look at the following resources:
 
-Good luck, and happy coding!
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
