@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -37,7 +37,7 @@ jobs:
       pages: write
       id-token: write
     environment:
-      name: development
+      name: deployment
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository code
@@ -54,6 +54,7 @@ jobs:
           static_site_generator: next
       - run: npm install
       - run: npm run build
+      - run: ls -la
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v1
         with:
