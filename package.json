@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --colors --coverage --testTimeout 25000 --maxWorkers=4",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@radix-ui/colors": "^3.0.0",
@@ -19,6 +21,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.3.0",
     "@testing-library/react": "^14.1.2",
+    "@types/jest": "^29.5.11",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
