@@ -19,6 +19,6 @@ describe('NavLinkList', () => {
   it('should render search bar on other page', () => {
     ;(usePathname as jest.Mock).mockReturnValue('/books')
     render(<NavLinkList />)
-    expect(screen.queryByTestId('search-bar')).toBeInTheDocument()
+    expect(screen.queryByTestId('search-bar-container')).toBeInTheDocument()
   })
 })
