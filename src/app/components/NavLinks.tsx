@@ -16,7 +16,7 @@ export default function NavLinks({
 
   return (
     <NextLink href={href} legacyBehavior>
-      <Button variant='ghost' size='3'>
+      <Button variant='ghost' size='3' className='cursor-pointer'>
         <Text
           weight='bold'
           className='uppercase text-black tracking-wider'
