@@ -21,7 +21,7 @@ export default function NavbarIcon() {
           className='uppercase tracking-widest'
           size={{ initial: '6', sm: '8' }}
         >
-          Vitruvius
+          VITLIB
         </Text>
       </Flex>
     </Link>
