@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
 import NextLink from 'next/link'
-import { usePathname } from 'next/navigation'
 import { Button, Text } from '@radix-ui/themes'
 
 export default function NavLinks({
@@ -11,12 +10,9 @@ export default function NavLinks({
   text: string
   href: string
 }) {
-  const pathname = usePathname()
-  const isActive = pathname === href
-
   return (
     <NextLink href={href} legacyBehavior>
-      <Button variant='ghost' size='3'>
+      <Button variant='ghost' size='3' className='cursor-pointer'>
         <Text
           weight='bold'
           className='uppercase text-black tracking-wider'

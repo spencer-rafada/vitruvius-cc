@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import '@radix-ui/themes/styles.css'
 import './globals.css'
-import { Theme, ThemePanel } from '@radix-ui/themes'
+import { Box, Theme, ThemePanel } from '@radix-ui/themes'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { SearchProvider } from './providers/SearchProvider'
 
 export const metadata: Metadata = {
   title: 'VITLIB',
@@ -19,10 +20,12 @@ export default function RootLayout({
     <html lang='en'>
       <body>
         <Theme accentColor='gray'>
-          <Navbar />
-          {children}
-          <Footer />
-          {/* <ThemePanel /> */}
+          <SearchProvider>
+            <Navbar />
+            <Box p={{ initial: '5', md: '8' }}>{children}</Box>
+            <Footer />
+            {/* <ThemePanel /> */}
+          </SearchProvider>
         </Theme>
       </body>
     </html>

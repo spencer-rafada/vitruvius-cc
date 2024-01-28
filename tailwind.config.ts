@@ -7,7 +7,15 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        xs: '520px', // Phones (landscape)
+        sm: '768px', // Tablets (portrait)
+        md: '1024px', // Tablets (landscape)
+        lg: '1280px', // Laptops
+        xl: '1640px', // Desktops
+      },
+    },
   },
   plugins: [],
 }
