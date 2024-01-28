@@ -10,4 +10,8 @@ describe('Navbar', () => {
     render(<Navbar />)
     expect(screen.getByTestId('home-icon')).toBeInTheDocument()
   })
+  it('should render nav link list', () => {
+    render(<Navbar />)
+    expect(screen.getByTestId('nav-link-list')).toBeInTheDocument()
+  })
 })

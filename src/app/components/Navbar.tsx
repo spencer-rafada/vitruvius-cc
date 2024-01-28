@@ -1,7 +1,7 @@
 import { Box, Flex } from '@radix-ui/themes'
 import React from 'react'
 import NavbarIcon from './NavbarIcon'
-import NavLinks from './NavLinks'
+import NavLinkList from './NavLinkList'
 
 export default function Navbar() {
   return (
@@ -9,9 +9,7 @@ export default function Navbar() {
       <Box>
         <NavbarIcon />
       </Box>
-      <Flex className='pr-2'>
-        <NavLinks text='Books' href='/books' />
-      </Flex>
+      <NavLinkList />
     </Flex>
   )
 }
