@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import '@radix-ui/themes/styles.css'
 import './globals.css'
-import { Box, Flex, Theme, ThemePanel } from '@radix-ui/themes'
+import { Flex, Theme, ThemePanel } from '@radix-ui/themes'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { SearchProvider } from './providers/SearchProvider'

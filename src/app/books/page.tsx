@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import React from 'react'
+import BooksContent from './components/BooksContent'
 
 export const metadata: Metadata = {
   title: 'VITLIB | Books',
@@ -7,5 +8,9 @@ export const metadata: Metadata = {
 }
 
 export default function BooksPage() {
-  return <></>
+  return (
+    <>
+      <BooksContent />
+    </>
+  )
 }
