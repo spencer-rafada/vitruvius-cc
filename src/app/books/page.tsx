@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import React from 'react'
-import Loading from './components/Loading'
-import { Box } from '@radix-ui/themes'
+import BooksContent from './components/BooksContent'
 
 export const metadata: Metadata = {
   title: 'VITLIB | Books',
@@ -10,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function BooksPage() {
   return (
-    <Box p={{ initial: '5', md: '8' }} className='h-full'>
-      <Loading />
-    </Box>
+    <>
+      <BooksContent />
+    </>
   )
 }
