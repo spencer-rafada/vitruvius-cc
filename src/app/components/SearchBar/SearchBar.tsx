@@ -15,7 +15,7 @@ export default function SearchBar() {
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      router.push(`/books?q=${search}`)
+      router.push('/books')
     }
   }
 
