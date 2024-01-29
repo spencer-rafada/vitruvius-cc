@@ -12,30 +12,17 @@ import React, {
 interface SearchContextProps {
   search: string
   setSearch: Dispatch<SetStateAction<string>>
-  bookList: Array<Object>
-  setBookList: Dispatch<SetStateAction<Array<Object>>>
 }
 
 const SearchContext = createContext<SearchContextProps>({
   search: '',
   setSearch: () => {},
-  bookList: [{}],
-  setBookList: () => {},
 })
 
 export const SearchProvider = ({ children }: { children: ReactNode }) => {
   const [search, setSearch] = useState('')
-  const [bookList, setBookList] = useState([{}])
-
-  useEffect(() => {
-    console.log('search', search)
-    setBookList([{ test: '1' }])
-  }, [search])
-
   return (
-    <SearchContext.Provider
-      value={{ search, setSearch, bookList, setBookList }}
-    >
+    <SearchContext.Provider value={{ search, setSearch }}>
       {children}
     </SearchContext.Provider>
   )

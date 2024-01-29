@@ -15,11 +15,11 @@ export default function SearchBar() {
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      router.push('/books')
+      router.push(`/books?q=${search}`)
     }
   }
 
-return (
+  return (
     <TextField.Root
       data-testid='search-bar-container'
       className='w-10/12 md:w-8/12'
