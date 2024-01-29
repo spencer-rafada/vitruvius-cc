@@ -2,13 +2,21 @@
 import { useSearchProvider } from '@/app/providers/SearchProvider'
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
 import { TextField } from '@radix-ui/themes'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 export default function SearchBar() {
   const { search, setSearch } = useSearchProvider()
+  const router = useRouter()
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value)
+  }
+
+  const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      router.push('/books')
+    }
   }
 
   return (
@@ -25,6 +33,7 @@ export default function SearchBar() {
         placeholder='Search a book...'
         value={search}
         onChange={onChange}
+        onKeyDown={onKeyDown}
       />
     </TextField.Root>
   )

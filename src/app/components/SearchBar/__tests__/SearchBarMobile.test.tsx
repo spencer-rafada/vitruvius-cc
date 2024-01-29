@@ -1,6 +1,12 @@
 import { screen, render, fireEvent } from '@testing-library/react'
 import SearchBarMobile from '../SearchBarMobile'
 
+jest.mock('next/navigation', () => ({
+  useRouter: () => ({
+    push: jest.fn(),
+  }),
+}))
+
 describe('Search Bar Mobile', () => {
   it('should render the toggle button', () => {
     render(<SearchBarMobile />)

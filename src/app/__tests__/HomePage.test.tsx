@@ -1,10 +1,17 @@
 import { render, screen } from '@testing-library/react'
 import Home from '../page'
 
+jest.mock('next/navigation', () => ({
+  usePathname: jest.fn(),
+  useRouter: () => ({
+    push: jest.fn(),
+  }),
+}))
+
 describe('Home', () => {
-  it('should render home page text', () => {
+  it('should render the search bar', () => {
     render(<Home />)
 
-    expect(screen.getByText('Home Page')).toBeInTheDocument()
+    expect(screen.getByTestId('search-bar-container')).toBeInTheDocument()
   })
 })

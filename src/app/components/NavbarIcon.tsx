@@ -4,10 +4,12 @@ import Image from 'next/image'
 import headerIcon from '../../../public/vitruvius-logo.webp'
 import React from 'react'
 import Link from 'next/link'
+import { useSearchProvider } from '../providers/SearchProvider'
 
 export default function NavbarIcon() {
+  const { setSearch } = useSearchProvider()
   return (
-    <Link href='/'>
+    <Link href='/' onClick={() => setSearch('')}>
       <Flex direction='row' gap='3' align='center'>
         <Image
           src={headerIcon}

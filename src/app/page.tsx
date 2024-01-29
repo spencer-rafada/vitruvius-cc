@@ -1,13 +1,12 @@
 import SearchBar from './components/SearchBar/SearchBar'
-import { Flex } from '@radix-ui/themes'
+import { Box, Flex } from '@radix-ui/themes'
 
 export default function Home() {
   return (
-    <>
-      <div>Home Page</div>
-      <Flex justify='center' align='center'>
+    <Box p={{ initial: '5', md: '8' }} className='h-full'>
+      <Flex justify='center' align='center' className='h-full'>
         <SearchBar />
       </Flex>
-    </>
+    </Box>
   )
 }

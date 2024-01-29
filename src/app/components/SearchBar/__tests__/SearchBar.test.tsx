@@ -1,5 +1,11 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import SearchBar from '../SearchBar'
+jest.mock('next/navigation', () => ({
+  usePathname: jest.fn(),
+  useRouter: () => ({
+    push: jest.fn(),
+  }),
+}))
 
 describe('SearchBar', () => {
   it('should render the search bar', () => {
