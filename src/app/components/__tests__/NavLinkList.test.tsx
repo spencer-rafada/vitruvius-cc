@@ -4,6 +4,9 @@ import { usePathname } from 'next/navigation'
 
 jest.mock('next/navigation', () => ({
   usePathname: jest.fn(),
+  useRouter: () => ({
+    push: jest.fn(),
+  }),
 }))
 
 describe('NavLinkList', () => {
