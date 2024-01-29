@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import '@radix-ui/themes/styles.css'
 import './globals.css'
-import { Box, Theme, ThemePanel } from '@radix-ui/themes'
+import { Box, Flex, Theme, ThemePanel } from '@radix-ui/themes'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { SearchProvider } from './providers/SearchProvider'
@@ -18,13 +18,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body>
+      <body className='h-full'>
         <Theme accentColor='gray'>
           <SearchProvider>
-            <Navbar />
-            <Box p={{ initial: '5', md: '8' }}>{children}</Box>
-            <Footer />
-            {/* <ThemePanel /> */}
+            <Flex className='h-dvh' direction='column'>
+              <Navbar />
+              {children}
+              {/* <Box className='grow shrink-0 box-border'></Box> */}
+              <Footer />
+              {/* <ThemePanel /> */}
+            </Flex>
           </SearchProvider>
         </Theme>
       </body>
