@@ -15,6 +15,10 @@ interface SearchContextProps {
   getBooks: () => {}
   loading: boolean
   setLoading: Dispatch<SetStateAction<boolean>>
+  lastSearch: string
+  setLastSearch: Dispatch<SetStateAction<string>>
+  searchResult: Array<Object>
+  setSearchResult: Dispatch<SetStateAction<Array<Object>>>
 }
 
 const SearchContext = createContext<SearchContextProps>({
@@ -23,11 +27,17 @@ const SearchContext = createContext<SearchContextProps>({
   getBooks: async () => {},
   loading: false,
   setLoading: () => {},
+  lastSearch: '',
+  setLastSearch: () => {},
+  searchResult: [{}],
+  setSearchResult: () => {},
 })
 
 export const SearchProvider = ({ children }: { children: ReactNode }) => {
   const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(false)
+  const [lastSearch, setLastSearch] = useState('')
+  const [searchResult, setSearchResult] = useState([{}])
 
   const getBooks = async () => {
     const res = await fetch(
@@ -36,12 +46,23 @@ export const SearchProvider = ({ children }: { children: ReactNode }) => {
       )}&fields=key,title,author_name,editions,isbn,publish_date,ratings_average,ratings_count,publisher,author_key,language,first_sentence,person,place,subject`
     )
     const data = await res.json()
-    console.log(data)
+    setLastSearch(data.q)
+    setSearchResult(data.docs)
   }
 
   return (
     <SearchContext.Provider
-      value={{ search, setSearch, getBooks, loading, setLoading }}
+      value={{
+        search,
+        setSearch,
+        getBooks,
+        loading,
+        setLoading,
+        lastSearch,
+        setLastSearch,
+        searchResult,
+        setSearchResult,
+      }}
     >
       {children}
     </SearchContext.Provider>
