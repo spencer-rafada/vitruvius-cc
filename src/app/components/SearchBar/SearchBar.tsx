@@ -3,7 +3,7 @@ import { useSearchProvider } from '@/app/providers/SearchProvider'
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
 import { TextField } from '@radix-ui/themes'
 import { useRouter } from 'next/navigation'
-import React, { useState } from 'react'
+import React from 'react'
 
 export default function SearchBar() {
   const { search, setSearch, getBooks, setLoading } = useSearchProvider()
