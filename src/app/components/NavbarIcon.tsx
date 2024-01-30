@@ -7,11 +7,12 @@ import Link from 'next/link'
 import { useSearchProvider } from '../providers/SearchProvider'
 
 export default function NavbarIcon() {
-  const { setSearch, setLastSearch } = useSearchProvider()
+  const { setSearch, setLastSearch, setSearchResult } = useSearchProvider()
 
   const onClick = () => {
     setSearch('')
     setLastSearch('')
+    setSearchResult([{}])
   }
 
   return (
