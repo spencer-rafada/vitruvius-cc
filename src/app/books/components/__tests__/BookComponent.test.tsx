@@ -1,5 +1,9 @@
 import { screen, render } from '@testing-library/react'
 import BookComponent from '../BookComponent'
+import { useWindowSize } from '@/app/hooks/useWindowSize'
+import { act } from 'react-dom/test-utils'
+
+jest.mock('../../../hooks/useWindowSize.tsx')
 
 const Dummy = ({ book }: { book: Object }) => {
   return <BookComponent book={book} />
@@ -444,6 +448,12 @@ describe('Book', () => {
       ],
     },
   }
+  beforeEach(() => {
+    ;(useWindowSize as jest.Mock).mockReturnValue({ width: 1024, height: 768 })
+  })
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
 
   it('should render the title of the book', () => {
     render(<Dummy book={book} />)
@@ -457,7 +467,7 @@ describe('Book', () => {
     render(<Dummy book={book} />)
     expect(screen.getByTestId('book-cover-container')).toBeInTheDocument()
   })
-  it('should render the ratings of the book', () => {
+  it('should render the publisher of the book', () => {
     render(<Dummy book={book} />)
     expect(screen.getByTestId('book-ratings-container')).toBeInTheDocument()
   })
