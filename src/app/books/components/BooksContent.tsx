@@ -8,7 +8,7 @@ import BooksList from './BooksList'
 export default function BooksContent() {
   const { lastSearch, loading, searchResult } = useSearchProvider()
   return (
-    <>
+    <Box p={{ initial: '5', md: '8' }}>
       {loading && <Loading />}
       <>
         {!loading && lastSearch && (
@@ -20,6 +20,6 @@ export default function BooksContent() {
         )}
         {!loading && searchResult && <BooksList books={searchResult} />}
       </>
-    </>
+    </Box>
   )
 }
