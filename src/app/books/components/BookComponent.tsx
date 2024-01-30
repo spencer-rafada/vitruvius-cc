@@ -119,7 +119,7 @@ export default function BookComponent({ book }: { book: any }) {
               </Box>
             )}
             {book.ratings_average && (
-              <Box>
+              <Box data-testid='book-ratings-container'>
                 <Rating
                   initialValue={book.ratings_average}
                   readonly
