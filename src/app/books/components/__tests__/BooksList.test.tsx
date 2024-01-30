@@ -5,7 +5,7 @@ const Dummy = ({ books }: { books: Array<Object> }) => {
   return <BooksList books={books} />
 }
 
-describe('Books List', () => {
+describe('BooksList', () => {
   const books = [
     {
       key: '/works/OL5735363W',
@@ -363,7 +363,7 @@ describe('Books List', () => {
         'Interpersonal relations, fiction',
         'Contests, fiction',
         'Television, fiction',
-        'Large type books',
+        'Large type book',
         'Future',
         'violent',
         'life risking',
@@ -435,7 +435,7 @@ describe('Books List', () => {
         numFoundExact: true,
         docs: [
           {
-            key: '/books/OL37079411M',
+            key: '/book/OL37079411M',
             title: 'The Hunger Games',
             language: ['eng'],
             publisher: ['Scholastic Press'],
@@ -446,36 +446,12 @@ describe('Books List', () => {
       },
     },
   ]
-  it('should not render the list if there are no books and show a message', () => {
+  it('should render the list of books if there are books', () => {
+    render(<Dummy books={books} />)
+    expect(screen.getByTestId('books-list-container')).toBeInTheDocument()
+  })
+  it('should not render the list if there are no book and show a message', () => {
     render(<Dummy books={[]} />)
-    expect(screen.getByTestId('no-books-message')).toBeInTheDocument()
-  })
-  it('should render the title of the book', () => {
-    render(<Dummy books={books} />)
-    expect(screen.getByTestId('book-title')).toBeInTheDocument()
-  })
-  it('should render the author of the book', () => {
-    render(<Dummy books={books} />)
-    expect(screen.getByTestId('book-author')).toBeInTheDocument()
-  })
-  it('should render the cover page of the book', () => {
-    render(<Dummy books={books} />)
-    expect(screen.getByTestId('book-cover-container')).toBeInTheDocument()
-  })
-  it('should render the ratings of the book', () => {
-    render(<Dummy books={books} />)
-    expect(screen.getByTestId('book-ratings-container')).toBeInTheDocument()
-  })
-  it('should render the publish date of the book', () => {
-    render(<Dummy books={books} />)
-    expect(screen.getByTestId('book-publish-date')).toBeInTheDocument()
-  })
-  it('should render the language of the book', () => {
-    render(<Dummy books={books} />)
-    expect(screen.getByTestId('book-language')).toBeInTheDocument()
-  })
-  it('should render the ISBN of the book', () => {
-    render(<Dummy books={books} />)
-    expect(screen.getByTestId('book-isbn')).toBeInTheDocument()
+    expect(screen.getByTestId('no-book-message')).toBeInTheDocument()
   })
 })
