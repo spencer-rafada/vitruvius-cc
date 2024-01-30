@@ -12,7 +12,7 @@ export default function NavbarIcon() {
   const onClick = () => {
     setSearch('')
     setLastSearch('')
-    setSearchResult([{}])
+    setSearchResult([])
   }
 
   return (

@@ -37,7 +37,7 @@ export const SearchProvider = ({ children }: { children: ReactNode }) => {
   const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(false)
   const [lastSearch, setLastSearch] = useState('')
-  const [searchResult, setSearchResult] = useState([{}])
+  const [searchResult, setSearchResult] = useState<Object[]>([])
 
   const getBooks = async () => {
     const res = await fetch(
