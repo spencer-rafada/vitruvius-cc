@@ -1,4 +1,5 @@
-export const dynamic = 'force-dynamic'
+export const dynamic =
+  process.env.NODE_ENV !== 'production' ? 'auto' : 'force-dynamic'
 import React from 'react'
 
 type Props = {

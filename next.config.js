@@ -5,7 +5,7 @@ if (process.env.NODE_ENV === 'production') {
   nextConfig = {
     // configuration for production
     images: {
-      unoptimized: false,
+      unoptimized: true,
     },
   }
 } else {
@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
     // configuration for development
     output: 'export',
     images: {
-      unoptimized: false,
+      unoptimized: true,
     },
   }
 }
