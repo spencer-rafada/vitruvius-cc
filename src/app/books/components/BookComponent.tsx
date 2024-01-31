@@ -17,7 +17,10 @@ export default function BookComponent({ book }: { book: any }) {
         data-testid='book-component-mobile'
       >
         <NextLink
-          href={`/books/${book.editions.docs[0].key.replace('/books/', '')}`}
+          href={`/books/${book.editions.docs?.[0]?.key?.replace(
+            '/books/',
+            ''
+          )}`}
           passHref
         >
           <Inset clip='padding-box'>
@@ -49,7 +52,7 @@ export default function BookComponent({ book }: { book: any }) {
   return (
     <Card asChild variant='classic'>
       <NextLink
-        href={`/books/${book.editions.docs[0].key.replace('/books/', '')}`}
+        href={`/books/${book.editions.docs?.[0]?.key?.replace('/books/', '')}`}
         passHref
       >
         <Flex gap='5'>
@@ -88,19 +91,19 @@ export default function BookComponent({ book }: { book: any }) {
             </Text>
             <Box>
               <Text data-testid='book-publisher'>
-                Published by: {book.editions?.docs?.[0].publisher?.[0]},{' '}
+                Published by: {book.editions?.docs?.[0]?.publisher?.[0]},{' '}
               </Text>
               <Text data-testid='book-publish-date'>
-                {book.editions?.docs?.[0].publish_date?.[0]} -{' '}
+                {book.editions?.docs?.[0]?.publish_date?.[0]} -{' '}
               </Text>
               <Text data-testid='book-language'>
-                {book.editions?.docs?.[0].language?.[0].toUpperCase()}
+                {book.editions?.docs?.[0]?.language?.[0].toUpperCase()}
               </Text>
             </Box>
-            {book.editions?.docs?.[0].isbn && (
+            {book.editions?.docs?.[0]?.isbn && (
               <Box data-testid='book-isbn'>
                 <Text size='2'>ISBN: </Text>
-                {book.editions?.docs?.[0].isbn?.map(
+                {book.editions?.docs?.[0]?.isbn?.map(
                   (isbn: string, key: any) => {
                     return (
                       <span key={key}>
