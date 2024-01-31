@@ -7,9 +7,16 @@ import Link from 'next/link'
 import { useSearchProvider } from '../providers/SearchProvider'
 
 export default function NavbarIcon() {
-  const { setSearch } = useSearchProvider()
+  const { setSearch, setLastSearch, setSearchResult } = useSearchProvider()
+
+  const onClick = () => {
+    setSearch('')
+    setLastSearch('')
+    setSearchResult([])
+  }
+
   return (
-    <Link href='/' onClick={() => setSearch('')}>
+    <Link href='/' onClick={onClick}>
       <Flex direction='row' gap='3' align='center'>
         <Image
           src={headerIcon}

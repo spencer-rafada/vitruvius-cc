@@ -11,19 +11,19 @@ export default function NavLinkList() {
   const pathname = usePathname()
   const isHome = pathname === '/'
   const windowSize = useWindowSize()
-  const shouldRenderSearchBarMobile = !isHome && windowSize.width <= 768
+  const shouldRenderSearchBarMobile = !isHome && windowSize.width <= 520
 
   return (
     <Flex
-      className='pr-2'
+      className='pr-2 w-3/6'
       data-testid='nav-link-list'
       gap={{ initial: '3', sm: '5' }}
-      justify='center'
+      justify='end'
       align='center'
     >
-      {!isHome && windowSize.width > 768 && <SearchBar />}
+      {!isHome && windowSize.width > 520 && <SearchBar />}
       {shouldRenderSearchBarMobile && <SearchBarMobile />}
-      <NavLinks text='Books' href='/books' />
+      {/* <NavLinks text='Books' href='/books' /> */}
     </Flex>
   )
 }
