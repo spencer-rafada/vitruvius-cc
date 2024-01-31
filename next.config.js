@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
     // configuration for development
     output: 'export',
     images: {
-      unoptimized: true,
+      unoptimized: false,
     },
   }
 }
