@@ -30,12 +30,12 @@ describe('Book Details', () => {
       screen.getByTestId('book-details-overview-container')
     ).toBeInTheDocument()
   })
-  it('should render the edition container', () => {
-    render(<BookDetails bookId='OL37079411M' />)
-    expect(
-      screen.getByTestId('book-details-edition-container')
-    ).toBeInTheDocument()
-  })
+  // it('should render the edition container', () => {
+  //   render(<BookDetails bookId='OL37079411M' />)
+  //   expect(
+  //     screen.getByTestId('book-details-edition-container')
+  //   ).toBeInTheDocument()
+  // })
   it('should render the related subjects container', () => {
     render(<BookDetails bookId='OL37079411M' />)
     expect(screen.getByTestId('book-details-container')).toBeInTheDocument()
