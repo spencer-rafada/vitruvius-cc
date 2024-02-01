@@ -31,7 +31,6 @@ export async function generateMetadata(
   const response = await fetch(`https://openlibrary.org/search.json?q=${id}`)
   const data = await response.json()
   const book = data.docs[0]
-  console.log(book.person)
 
   return {
     title: `${book.title} | VITLIB `,
