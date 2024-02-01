@@ -1,7 +1,7 @@
 import React from 'react'
 import { Flex, Separator, Text } from '@radix-ui/themes'
 import { Rating } from 'react-simple-star-rating'
-import IBook from '../../Book.types'
+import IBook from '../../../Book.types'
 
 export default function TopSection({ work, book }: { work: any; book: IBook }) {
   return (

@@ -1,7 +1,7 @@
 export const dynamic =
   process.env.NODE_ENV !== 'production' ? 'auto' : 'force-dynamic'
 import React from 'react'
-import BookDetails from './components/BookDetails'
+import BookDetails from './components/Overview/BookDetails'
 import BookCover from './components/BookCover'
 import { Box, Flex } from '@radix-ui/themes'
 import { Metadata, ResolvingMetadata } from 'next'

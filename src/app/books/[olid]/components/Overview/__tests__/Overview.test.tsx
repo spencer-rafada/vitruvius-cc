@@ -24,6 +24,14 @@ describe('Overview', () => {
       ).toBeInTheDocument()
     })
   })
+  describe('First Sentence', () => {
+    it('should render the first sentence', () => {
+      render(<Overview work={work} book={book} />)
+      expect(
+        screen.getByTestId('book-details-first-sentence')
+      ).toBeInTheDocument()
+    })
+  })
   describe('Cards Section', () => {
     it('should render the publisher date card', () => {
       render(<Cards work={work} book={book} />)
