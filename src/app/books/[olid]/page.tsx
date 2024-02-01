@@ -1,6 +1,7 @@
 export const dynamic =
   process.env.NODE_ENV !== 'production' ? 'auto' : 'force-dynamic'
 import React from 'react'
+import BookDetails from './components/BookDetails'
 
 type Props = {
   params: { olid: string }
@@ -19,5 +20,9 @@ export async function generateStaticParams() {
 }
 
 export default function DetailsPage({ params }: Props) {
-  return <div>{params.olid}</div>
+  return (
+    <>
+      <BookDetails bookId={params.olid} />
+    </>
+  )
 }
