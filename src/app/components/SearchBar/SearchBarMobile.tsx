@@ -18,7 +18,10 @@ export default function SearchBarMobile() {
         <MagnifyingGlassIcon width='18' height='18' />
       </IconButton>
       <Dialog.Root open={open} onOpenChange={setOpen}>
-        <Dialog.Content data-testid='search-bar-dialog-container'>
+        <Dialog.Content
+          data-testid='search-bar-dialog-container'
+          className='h-1/2'
+        >
           <Flex gap='3' align='center' justify='between'>
             <SearchBar />
             <IconButton
