@@ -1,18 +1,19 @@
 import React from 'react'
-import { Flex, Separator, Text } from '@radix-ui/themes'
+import { Flex, Heading, Separator, Text } from '@radix-ui/themes'
 import { Rating } from 'react-simple-star-rating'
-import IBook from '../../Book.types'
+import IBook from '../../../Book.types'
 
 export default function TopSection({ work, book }: { work: any; book: IBook }) {
   return (
     <Flex direction='column' gap={{ initial: '1', md: '2' }}>
-      <Text
+      <Heading
+        as='h2'
         weight='bold'
         size={{ initial: '6', md: '8' }}
         data-testid='book-details-top-title'
       >
         {book.title}
-      </Text>
+      </Heading>
       <Text
         weight='medium'
         size={{ initial: '4', md: '6' }}

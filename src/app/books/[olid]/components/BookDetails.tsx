@@ -2,7 +2,8 @@
 import useBookDetails from '@/app/hooks/useBookDetails'
 import { Box, Tabs } from '@radix-ui/themes'
 import React from 'react'
-import Overview from './Overview'
+import Overview from './Overview/Overview'
+import Details from './Details/Details'
 
 export default function BookDetails({ bookId }: { bookId: string }) {
   const { work, book, error, loading } = useBookDetails({ olid: bookId })
@@ -13,7 +14,7 @@ export default function BookDetails({ bookId }: { bookId: string }) {
           <Tabs.Root defaultValue='overview'>
             <Tabs.List>
               <Tabs.Trigger value='overview'>Overview</Tabs.Trigger>
-              <Tabs.Trigger value='editions'>Editions</Tabs.Trigger>
+              {/* <Tabs.Trigger value='editions'>Editions</Tabs.Trigger> */}
               <Tabs.Trigger value='details'>Details</Tabs.Trigger>
             </Tabs.List>
             <Box p={{ initial: '2', md: '3' }}>
@@ -23,17 +24,17 @@ export default function BookDetails({ bookId }: { bookId: string }) {
               >
                 <Overview work={work} book={book} />
               </Tabs.Content>
-              <Tabs.Content
+              {/* <Tabs.Content
                 value='editions'
                 data-testid='book-details-edition-container'
               >
                 y
-              </Tabs.Content>
+              </Tabs.Content> */}
               <Tabs.Content
                 value='details'
                 data-testid='book-details-container'
               >
-                z
+                <Details bookId={bookId} />
               </Tabs.Content>
             </Box>
           </Tabs.Root>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Flex, Link, Text } from '@radix-ui/themes'
 import NextLink from 'next/link'
-import IBook from '../../Book.types'
+import IBook from '../../../Book.types'
 
 export default function Cards({ work, book }: { work: any; book: IBook }) {
   return (

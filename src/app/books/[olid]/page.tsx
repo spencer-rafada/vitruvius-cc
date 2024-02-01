@@ -5,6 +5,7 @@ import BookDetails from './components/BookDetails'
 import BookCover from './components/BookCover'
 import { Box, Flex } from '@radix-ui/themes'
 import { Metadata, ResolvingMetadata } from 'next'
+import Details from './components/Details/Details'
 
 type Props = {
   params: { olid: string }
