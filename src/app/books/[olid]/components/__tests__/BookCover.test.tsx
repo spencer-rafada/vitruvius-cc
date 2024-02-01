@@ -1,4 +1,4 @@
-import { screen, render } from '@testing-library/react'
+import { screen, render, fireEvent, getByRole } from '@testing-library/react'
 import BookCover from '../BookCover'
 import useBookDetails from '@/app/hooks/useBookDetails'
 
@@ -57,5 +57,11 @@ describe('BookCover', () => {
     })
     render(<BookCover bookId='OL37079411M' />)
     expect(screen.queryByTestId('book-details-error-state')).toBeInTheDocument()
+  })
+  it('should render the rating component', () => {
+    render(<BookCover bookId='OL37079411M' />)
+    expect(
+      screen.queryByTestId('book-details-rating-container')
+    ).toBeInTheDocument()
   })
 })
