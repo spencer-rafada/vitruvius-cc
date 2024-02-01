@@ -5,8 +5,6 @@ import TopSection from './TopSection'
 import Cards from './Cards'
 
 export default function Overview({ work, book }: { work: any; book: IBook }) {
-  console.log('work', work)
-  console.log('book', book)
   return (
     <>
       <Flex direction='column' gap={{ initial: '3', md: '4' }}>
