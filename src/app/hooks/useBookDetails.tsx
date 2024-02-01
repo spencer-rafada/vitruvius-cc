@@ -4,7 +4,7 @@ import IBook from '../books/Book.types'
 let cache = new Map()
 
 export default function useBookDetails({ olid }: { olid: string }) {
-  const [work, setWork] = useState([])
+  const [work, setWork] = useState<any>([])
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false)
   const [book, setBook] = useState<IBook>()
@@ -16,7 +16,7 @@ export default function useBookDetails({ olid }: { olid: string }) {
         const response = await fetch(
           `https://openlibrary.org/search.json?q=${encodeURIComponent(
             olid
-          )}&fields=key,title,author_name,editions,isbn,publish_date,ratings_average,ratings_count,publisher,author_key,language,first_sentence,person,place,subject,number_of_pages_median`
+          )}&fields=key,title,author_name,editions,isbn,publish_date,ratings_average,ratings_count,publisher,author_key,language,first_sentence,person,place,subject,number_of_pages_median,id_amazon`
         )
         const data = await response.json()
         setWork(data.docs?.[0])

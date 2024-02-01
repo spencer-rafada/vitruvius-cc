@@ -8,10 +8,10 @@ export default function Cards({ work, book }: { work: any; book: IBook }) {
     <Flex
       direction='row'
       gap={{ initial: '2', md: '3' }}
-      wrap={{ initial: 'wrap', xs: 'nowrap' }}
+      wrap={{ initial: 'wrap', sm: 'nowrap' }}
     >
       <Card
-        className='w-full xs:w-1/2 sm:w-1/4 cursor-default'
+        className='w-full sm:w-1/4 cursor-default'
         data-testid='book-details-publisher-date-card'
       >
         <Flex
@@ -29,7 +29,7 @@ export default function Cards({ work, book }: { work: any; book: IBook }) {
         </Flex>
       </Card>
       <Card
-        className='w-full xs:w-1/2 sm:w-1/4 cursor-default'
+        className='w-full sm:w-1/4 cursor-default'
         data-testid='book-details-publisher-card'
       >
         <Flex
@@ -43,7 +43,7 @@ export default function Cards({ work, book }: { work: any; book: IBook }) {
           <Text weight='medium' align='center'>
             Publisher
           </Text>
-          <Link color='blue'>
+          <Link color='blue' asChild>
             <NextLink
               href={`https://www.google.com/search?q=search${book.publisher[0]}`}
               passHref
@@ -54,7 +54,7 @@ export default function Cards({ work, book }: { work: any; book: IBook }) {
         </Flex>
       </Card>
       <Card
-        className='w-full xs:w-1/2 sm:w-1/4 cursor-default'
+        className='w-full sm:w-1/4 cursor-default'
         data-testid='book-details-language-card'
       >
         <Flex
@@ -72,7 +72,7 @@ export default function Cards({ work, book }: { work: any; book: IBook }) {
         </Flex>
       </Card>
       <Card
-        className='w-full xs:w-1/2 sm:w-1/4 cursor-default'
+        className='w-full sm:w-1/4 cursor-default'
         data-testid='book-details-pages-card'
       >
         <Flex

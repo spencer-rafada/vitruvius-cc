@@ -8,7 +8,7 @@ export default function BookDetails({ bookId }: { bookId: string }) {
   const { work, book, error, loading } = useBookDetails({ olid: bookId })
   return (
     <>
-      <Box p={{ initial: '5', md: '8' }} className='pt-0'>
+      <Box className='w-full md:w-3/4'>
         {work && book && !error && !loading && (
           <Tabs.Root defaultValue='overview'>
             <Tabs.List>
