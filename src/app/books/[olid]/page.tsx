@@ -2,6 +2,8 @@ export const dynamic =
   process.env.NODE_ENV !== 'production' ? 'auto' : 'force-dynamic'
 import React from 'react'
 import BookDetails from './components/BookDetails'
+import BookCover from './components/BookCover'
+import { Box, Flex } from '@radix-ui/themes'
 
 type Props = {
   params: { olid: string }
@@ -22,7 +24,16 @@ export async function generateStaticParams() {
 export default function DetailsPage({ params }: Props) {
   return (
     <>
-      <BookDetails bookId={params.olid} />
+      <Flex
+        direction={{ initial: 'column', sm: 'row' }}
+        gap={{ initial: '5', sm: '7' }}
+        p={{ initial: '5', md: '8' }}
+        className='pt-0 h-fit sm:h-dvh'
+        align={{ initial: 'center', sm: 'start' }}
+      >
+        <BookCover bookId={params.olid} />
+        <BookDetails bookId={params.olid} />
+      </Flex>
     </>
   )
 }

@@ -75,6 +75,7 @@ export default function BookComponent({ book }: { book: any }) {
                   'url(https://www.nipponniche.com/wp-content/uploads/2021/04/fentres-pdf.jpeg)',
                 backgroundSize: '100%',
                 backgroundPosition: 'center center',
+                borderRadius: '5px',
               }}
             />
           </Flex>
