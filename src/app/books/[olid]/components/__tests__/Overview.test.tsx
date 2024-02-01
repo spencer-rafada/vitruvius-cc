@@ -1,18 +1,21 @@
 import { screen, render } from '@testing-library/react'
 import Overview from '../Overview'
+import TopSection from '../TopSection'
+import Cards from '../Cards'
+import IBook from '@/app/books/Book.types'
 
 describe('Overview', () => {
   describe('Top Section', () => {
     it('should render the title', () => {
-      render(<Overview work={work} book={book} />)
+      render(<TopSection work={work} book={book} />)
       expect(screen.getByTestId('book-details-top-title')).toBeInTheDocument()
     })
     it('should render the author', () => {
-      render(<Overview work={work} book={book} />)
+      render(<TopSection work={work} book={book} />)
       expect(screen.getByTestId('book-details-top-author')).toBeInTheDocument()
     })
     it('should render the rating container and the number of ratining', () => {
-      render(<Overview work={work} book={book} />)
+      render(<TopSection work={work} book={book} />)
       expect(
         screen.getByTestId('book-details-top-rating-container')
       ).toBeInTheDocument()
@@ -21,15 +24,40 @@ describe('Overview', () => {
       ).toBeInTheDocument()
     })
   })
+  describe('Cards Section', () => {
+    it('should render the publisher date card', () => {
+      render(<Cards work={work} book={book} />)
+      expect(
+        screen.getByTestId('book-details-publisher-date-card')
+      ).toBeInTheDocument()
+    })
+    it('should render the publisher card', () => {
+      render(<Cards work={work} book={book} />)
+      expect(
+        screen.getByTestId('book-details-publisher-card')
+      ).toBeInTheDocument()
+    })
+    it('should render the language card', () => {
+      render(<Cards work={work} book={book} />)
+      expect(
+        screen.getByTestId('book-details-language-card')
+      ).toBeInTheDocument()
+    })
+    it('should render the number of pages card', () => {
+      render(<Cards work={work} book={book} />)
+      expect(screen.getByTestId('book-details-pages-card')).toBeInTheDocument()
+    })
+  })
 })
 
-const book = {
+const book: IBook = {
   key: '/books/OL37079411M',
   title: 'The Hunger Games',
   language: ['eng'],
   publisher: ['Scholastic Press'],
   publish_date: ['2008-10'],
   isbn: ['9780439023481', '0439023483'],
+  number_of_pages_median: 399,
 }
 const work = {
   key: '/works/OL5735363W',

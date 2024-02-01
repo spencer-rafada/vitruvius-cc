@@ -5,4 +5,5 @@ export default interface IBook {
   publish_date: string[]
   publisher: string[]
   title: string
+  number_of_pages_median: number
 }
