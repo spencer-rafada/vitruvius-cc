@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import BookDetails from '../BookDetails'
 import useBookDetails from '@/app/hooks/useBookDetails'
 
-jest.mock('../../../../../hooks/useBookDetails.tsx')
+jest.mock('../../../../hooks/useBookDetails.tsx')
 
 describe('Book Details', () => {
   beforeEach(() => {
