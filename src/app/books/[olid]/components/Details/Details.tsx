@@ -1,7 +1,8 @@
 'use client'
 import useBookDetails from '@/app/hooks/useBookDetails'
-import { Flex, Heading, Text } from '@radix-ui/themes'
+import { Flex, Heading, Link, Text } from '@radix-ui/themes'
 import React from 'react'
+import NextLink from 'next/link'
 
 export default function Details({ bookId }: { bookId: string }) {
   const { book, work, loading, error } = useBookDetails({ olid: bookId })
@@ -34,7 +35,16 @@ export default function Details({ bookId }: { bookId: string }) {
             data-testid='books-details-isbn'
           >
             <Text weight='medium'>ISBN</Text>
-            <Text>{book?.isbn?.[0] || book?.isbn?.[1]}</Text>
+            <Link color='blue' underline='always' asChild>
+              <NextLink
+                href={`https://www.google.com/search?q=${
+                  book?.isbn?.[0] || book?.isbn?.[1]
+                }`}
+                passHref
+              >
+                {book?.isbn?.[0] || book?.isbn?.[1]}
+              </NextLink>
+            </Link>
           </Flex>
         </Flex>
       )}
