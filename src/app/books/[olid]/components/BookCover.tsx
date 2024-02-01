@@ -110,11 +110,11 @@ export default function BookCover({ bookId }: { bookId: string }) {
       >
         <Dialog.Content>
           <Dialog.Title>
-            You rated {book ? book.title : 'this book'} a {rating}.
+            Thanks for rating {book ? book.title : 'this book'}.
           </Dialog.Title>
           <Dialog.Description>
-            Your feedback has been submitted successfully. Thank you for helping
-            us improve our platform.
+            Your feedback matters. Thank you for helping us improve our
+            platform. Happy reading!
           </Dialog.Description>
           <Flex direction='row' gap='5' justify='center' align='center' p='5'>
             <IconButton asChild size='3' radius='full' color='blue'>
