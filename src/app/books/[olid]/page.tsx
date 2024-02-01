@@ -4,6 +4,7 @@ import React from 'react'
 import BookDetails from './components/BookDetails'
 import BookCover from './components/BookCover'
 import { Box, Flex } from '@radix-ui/themes'
+import { Metadata, ResolvingMetadata } from 'next'
 
 type Props = {
   params: { olid: string }
@@ -19,6 +20,22 @@ export async function generateStaticParams() {
   }))
 
   return book
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const id = params.olid
+
+  const response = await fetch(`https://openlibrary.org/search.json?q=${id}`)
+  const data = await response.json()
+  const book = data.docs[0]
+
+  return {
+    title: `${book.title} | VITLIB `,
+    description: `Details of the book ${book.title}`,
+  }
 }
 
 export default function DetailsPage({ params }: Props) {
