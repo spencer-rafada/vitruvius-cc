@@ -25,7 +25,6 @@ export default function BookCover({ bookId }: { bookId: string }) {
   const { work, book, loading, error } = useBookDetails({ olid: bookId })
   const [rating, setRating] = useState(0)
   const [openDialog, setOpenDialog] = useState(false)
-  console.log(book)
 
   const handleRating = (rate: number) => {
     setRating(rate)
