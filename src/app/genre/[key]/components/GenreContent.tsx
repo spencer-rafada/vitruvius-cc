@@ -15,7 +15,7 @@ export default function GenreContent({ key }: { key: string }) {
         data-testid='genre-content-container'
         wrap='wrap'
         gap={{ initial: '3', md: '5' }}
-        justify={{ initial: 'center', md: 'start' }}
+        justify='center'
       >
         {data &&
           !loading &&

@@ -12,6 +12,7 @@ export default function GenreList() {
     'History',
     'Art',
     'Children',
+    'Love',
   ]
 
   return (
@@ -27,7 +28,7 @@ export default function GenreList() {
           return (
             <Box key={index} className='w-1/2 md:w-1/3' pb='1'>
               <Link asChild size='3' underline='hover'>
-                <NextLink href={`genre/${genre.toLowerCase()}`}>
+                <NextLink href={`/genre/${genre.toLowerCase()}`}>
                   {genre}
                 </NextLink>
               </Link>

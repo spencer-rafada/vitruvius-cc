@@ -14,7 +14,8 @@ export default function useGetBooksByGenre(key: string) {
           `https://openlibrary.org/search.json?subject=${key}&fields=key,title`
         )
         const data = await response.json()
-        setData(data.docs.splice(0, 15))
+        console.log(data)
+        setData(data.docs.splice(0, 50))
       } catch (error) {
         setError(true)
       }

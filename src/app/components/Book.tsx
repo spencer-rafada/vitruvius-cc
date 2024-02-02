@@ -9,8 +9,13 @@ type IWork = {
 
 export default function Book({ work }: { work: IWork }) {
   return (
-    <Card asChild variant='classic' data-testid='book-container'>
-      <NextLink href='' passHref>
+    <Card
+      asChild
+      variant='classic'
+      data-testid='book-container'
+      className='hover:scale-110 transition-all hover:shadow-xl cursor-pointer'
+    >
+      <NextLink href={`/books/${work.key.replace('/works/', '')}`} passHref>
         <Inset clip='padding-box'>
           <picture>
             <img

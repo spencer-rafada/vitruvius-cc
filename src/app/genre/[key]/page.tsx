@@ -20,6 +20,7 @@ export async function generateStaticParams() {
     { key: 'history' },
     { key: 'art' },
     { key: 'children' },
+    { key: 'love' },
   ]
 }
 
