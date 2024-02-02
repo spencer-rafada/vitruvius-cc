@@ -21,7 +21,7 @@ export default function useGetBooksByGenre({ genre }: { genre: string }) {
         )
         const data = await response.json()
         console.log(data)
-        setData(data.docs.splice(0, 20))
+        setData(data.docs.splice(0, 45))
       } catch (error) {
         setError(true)
       }
