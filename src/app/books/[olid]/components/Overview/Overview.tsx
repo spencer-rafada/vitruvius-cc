@@ -1,6 +1,6 @@
 import React from 'react'
 import IBook from '../../../Book.types'
-import { Box, Flex, Text } from '@radix-ui/themes'
+import { Box, Flex, Separator, Text } from '@radix-ui/themes'
 import TopSection from './TopSection'
 import Cards from './Cards'
 import BookReview from './BookReview'
@@ -19,7 +19,9 @@ export default function Overview({ work, book }: { work: any; book: IBook }) {
           </Text>
         </Box>
         <Cards work={work} book={book} />
+        <Separator size='4' />
         <BookReview book={book} />
+        <Separator size='4' />
       </Flex>
     </>
   )
