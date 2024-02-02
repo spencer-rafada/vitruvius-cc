@@ -9,7 +9,13 @@ import {
   TwitterLogoIcon,
 } from '@radix-ui/react-icons'
 
-export default function BookRating({ book }: { book: any }) {
+export default function BookRating({
+  book,
+  size = 30,
+}: {
+  book: any
+  size: number
+}) {
   const [rating, setRating] = useState(0)
   const [openDialog, setOpenDialog] = useState(false)
 
@@ -22,7 +28,7 @@ export default function BookRating({ book }: { book: any }) {
     <>
       <Flex direction='column' gap='1' justify='center' align='center'>
         <Rating
-          size={30}
+          size={size}
           SVGclassName='inline-block'
           onClick={handleRating}
           initialValue={rating}

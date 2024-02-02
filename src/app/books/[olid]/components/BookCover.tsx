@@ -46,7 +46,7 @@ export default function BookCover({ bookId }: { bookId: string }) {
               />
             </picture>
             <Box data-testid='book-details-rating-container'>
-              <BookRating book={book} />
+              <BookRating book={book} size={30} />
             </Box>
             <Box>
               <Button

@@ -1,8 +1,9 @@
-import { screen, render } from '@testing-library/react'
+import { screen, render, fireEvent } from '@testing-library/react'
 import Overview from '../Overview'
 import TopSection from '../TopSection'
 import Cards from '../Cards'
 import IBook from '@/app/books/Book.types'
+import BookReview from '../BookReview'
 
 describe('Overview', () => {
   describe('Top Section', () => {
@@ -54,6 +55,31 @@ describe('Overview', () => {
     it('should render the number of pages card', () => {
       render(<Cards work={work} book={book} />)
       expect(screen.getByTestId('book-details-pages-card')).toBeInTheDocument()
+    })
+  })
+  describe('Review Section', () => {
+    it('should render the container', () => {
+      render(<BookReview book={book} />)
+      expect(
+        screen.getByTestId('book-details-review-container')
+      ).toBeInTheDocument()
+    })
+    it('should render the rating component', () => {
+      render(<BookReview book={book} />)
+      expect(screen.getByTestId('book-details-rating')).toBeInTheDocument()
+    })
+    it('should render the write a review dialog', () => {
+      render(<BookReview book={book} />)
+      expect(
+        screen.getByTestId('book-details-write-review')
+      ).toBeInTheDocument()
+    })
+    it('should open the dialog when the button is clicked', () => {
+      render(<BookReview book={book} />)
+      fireEvent.click(screen.getByTestId('book-details-write-review'))
+      expect(
+        screen.getByTestId('book-details-review-dialog')
+      ).toBeInTheDocument()
     })
   })
 })
