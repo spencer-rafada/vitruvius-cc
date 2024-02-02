@@ -1,6 +1,7 @@
 import GenreList from './components/GenreList'
 import SearchBar from './components/SearchBar/SearchBar'
 import { Box, Flex } from '@radix-ui/themes'
+import Suggested from './components/Suggested'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         >
           <SearchBar />
           <GenreList />
+          <Suggested />
         </Flex>
       </Flex>
     </Box>
