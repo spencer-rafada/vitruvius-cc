@@ -2,20 +2,20 @@ import { Box, Flex, Link } from '@radix-ui/themes'
 import React from 'react'
 import NextLink from 'next/link'
 
-export default function GenreList() {
-  const genres = [
-    'Fiction',
-    'Novel',
-    'Narrative',
-    'Science',
-    'Mystery',
-    'History',
-    'Art',
-    'Children',
-    'Love',
-    'Sci-Fi',
-  ]
+export const genres = [
+  'Fiction',
+  'Novel',
+  'Narrative',
+  'Science',
+  'Mystery',
+  'History',
+  'Art',
+  'Children',
+  'Love',
+  'Sci-Fi',
+]
 
+export default function GenreList() {
   return (
     <>
       <Flex wrap='wrap' p='3' pt='0' data-testid='genre-list-container'>
