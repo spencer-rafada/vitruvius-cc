@@ -80,13 +80,9 @@ Static Site Generation of the app. During testing, the app will fail if you hit 
   ]
 ```
 
----
-
 #### `npm run build`
 
 Builds the app depending on the value of `NODE_ENV` environment variable
-
----
 
 #### `npm start`
 
@@ -94,19 +90,13 @@ Need to run `npm run build` first. Generates the app that will be deployed in pr
 
 This is more stable when testing dynamic routes.
 
----
-
 #### `npm run test`
 
 Runs all of the test with [Jest](https://jestjs.io/) and provide information about code coverages.
 
----
-
-### `npm run test:watch`
+#### `npm run test:watch`
 
 Watches files for changes and rerun tests related to changed files. Very useful script during development.
-
----
 
 ## Usage
 
