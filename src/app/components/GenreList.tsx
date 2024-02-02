@@ -18,16 +18,10 @@ export default function GenreList() {
 
   return (
     <>
-      <Flex
-        className='w-10/12 md:w-8/12'
-        wrap='wrap'
-        p='3'
-        pt='0'
-        data-testid='genre-list-container'
-      >
+      <Flex wrap='wrap' p='3' pt='0' data-testid='genre-list-container'>
         {genres.map((genre: string, index: number) => {
           return (
-            <Box key={index} className='w-1/2 md:w-1/3' pb='1'>
+            <Box key={index} className='w-1/2 sm:w-1/3 md:w-1/4' pb='1'>
               <Link asChild size='3' underline='hover'>
                 <NextLink href={`/genre/${genre.toLowerCase()}`}>
                   {genre}

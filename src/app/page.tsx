@@ -10,10 +10,15 @@ export default function Home() {
         align='center'
         className='h-full'
         direction='column'
-        gap={{ initial: '2', md: '4' }}
       >
-        <SearchBar />
-        <GenreList />
+        <Flex
+          direction='column'
+          className='w-10/12 md:w-8/12'
+          gap={{ initial: '2', md: '4' }}
+        >
+          <SearchBar />
+          <GenreList />
+        </Flex>
       </Flex>
     </Box>
   )
