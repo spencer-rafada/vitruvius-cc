@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { genres } from '../components/GenreList'
 import useGetBooksByGenre from './useGetBooksByGenre'
 
-export default function useSuggestion({ revalidate }: { revalidate: boolean }) {
+export default function useSuggestion() {
   const [randomGenre, setRandomGenre] = useState(
     () => genres[Math.floor(Math.random() * genres.length)]
   )
@@ -11,12 +11,6 @@ export default function useSuggestion({ revalidate }: { revalidate: boolean }) {
     genre: randomGenre,
     size: 3,
   })
-
-  useEffect(() => {
-    if (revalidate) {
-      setRandomGenre(() => genres[Math.floor(Math.random() * genres.length)])
-    }
-  }, [revalidate])
 
   return { data, loading, error }
 }
