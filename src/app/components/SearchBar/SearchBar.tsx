@@ -26,7 +26,7 @@ export default function SearchBar() {
   }
 
   return (
-    <form className='w-10/12 md:w-8/12' onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}>
       <TextField.Root
         data-testid='search-bar-container'
         className='w-full'
