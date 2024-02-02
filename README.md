@@ -4,8 +4,6 @@ Struggling to find what to read next? Get details about a book with a simple sea
 
 [Live Demo](https://youtu.be/-eke6qkA82c) | [Website](https://vitruvius-cc.vercel.app/) | [Repository](https://github.com/spencer-rafada/vitruvius-cc)
 
-![Home Demo](/public/home_demo.PNG)
-
 ![Mobile Demo](/public/home_mobile_demo.PNG)
 
 ### Built With
