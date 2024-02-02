@@ -21,6 +21,7 @@ export async function generateStaticParams() {
     { key: 'art' },
     { key: 'children' },
     { key: 'love' },
+    { key: 'sci-fi' },
   ]
 }
 
@@ -59,7 +60,7 @@ export default async function GenrePage({ params }: Props) {
           </Box>
           <GenreList />
         </Flex>
-        <GenreContent key={key} />
+        <GenreContent genre={key} />
       </Flex>
     </>
   )

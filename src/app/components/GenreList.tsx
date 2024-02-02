@@ -13,6 +13,7 @@ export default function GenreList() {
     'Art',
     'Children',
     'Love',
+    'Sci-Fi',
   ]
 
   return (
